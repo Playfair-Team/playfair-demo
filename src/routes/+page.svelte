@@ -8,7 +8,7 @@
   <div class="row">
     <div class="column">Model mathematical systems while writing <span>no code</span></div>
     <div class="column">Complete reports with <span>zero context-switching</span></div>
-    <div class="end-column">Fully <span>replace paper</span> as your go-to for mathematical work</div>
+    <div class="end-column">Fully <span>replace paper</span> for casual mathematical work</div>
   </div>
   <button>LOG IN</button>
   <div class="screenshot">
@@ -141,15 +141,16 @@
     h2{
       font-size: 1.7em;
     }
-    .container{
-      padding-top: 0;
-    }
     .column, .end-column {
       font-size: 1.1em;
     }
     .row{
+      margin: 65px;
       margin-left: 0;
       margin-right: 0;
+    }
+    .screenshot{
+      margin-bottom: 25px;
     }
   }
 </style>

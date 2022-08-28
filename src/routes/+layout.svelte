@@ -12,7 +12,7 @@
 <style>
 	main{
 		height: 100%;
-		padding: 25px;
-		padding-top: 10px;
+		padding-left: 25px;
+		padding-right: 25px;
 	}
 </style>

@@ -11,7 +11,7 @@
 	"background_color": "#FFFFFF",
 	"display": "fullscreen",
 	"scope": "/",
-	"theme_color": "#000000",
+	"theme_color": "#FFFFFF",
 	"description": "A humane notebook interface.",
-	"version": "0.1"
+	"version": "0.1.1"
 }
