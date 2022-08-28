@@ -56,7 +56,6 @@
     padding: 10px 20px;
     font-size: 1.2em;
     font-weight: 300;
-    margin-top: 20px;
     cursor: pointer;
 
     user-select: none;
@@ -142,6 +141,9 @@
     h2{
       font-size: 1.7em;
     }
+    .container{
+      padding-top: 0;
+    }
     .column, .end-column {
       font-size: 1.1em;
     }
@@ -149,7 +151,5 @@
       margin-left: 0;
       margin-right: 0;
     }
-
   }
-
 </style>
