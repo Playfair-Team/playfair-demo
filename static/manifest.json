@@ -1,0 +1,17 @@
+{
+	"name": "Playfair",
+	"start_url": "/",
+	"icons": [
+		{
+			"src": "logo_512.png",
+			"type": "image/png",
+			"sizes": "512x512"
+		}
+	],
+	"background_color": "#FFFFFF",
+	"display": "fullscreen",
+	"scope": "/",
+	"theme_color": "#000000",
+	"description": "A humane notebook interface.",
+	"version": "0.1"
+}
