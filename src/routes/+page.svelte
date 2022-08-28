@@ -97,7 +97,7 @@
     padding-top: 25px;
   }
 
-  .column {
+  .column, .end-column {
     float: left;
     width: 30%;
     height: 100%;
@@ -105,17 +105,10 @@
     padding-right: 25px;
     font-size: 1.5em;
     font-weight: 200;
-    border-right: rgb(215, 215, 215) 2.5px solid;
   }
 
-  .end-column{
-    float: left;
-    width: 30%;
-    height: 100%;
-    padding-left: 25px;
-    padding-right: 25px;
-    font-size: 1.5em;
-    font-weight: 200;
+  .column{
+    border-right: rgb(215, 215, 215) 2.5px solid;
   }
 
   .row{
@@ -140,4 +133,23 @@
     width: 100%;
     height: 100%;
   }
+
+  /* Mobile */
+  @media (max-width: 500px) {
+    h1{
+      font-size: 4.2em;
+    }
+    h2{
+      font-size: 1.7em;
+    }
+    .column, .end-column {
+      font-size: 1.1em;
+    }
+    .row{
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+  }
+
 </style>
