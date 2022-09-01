@@ -1,7 +1,9 @@
 <script>
+  import LandingHeader from "$lib/LandingHeader/LandingHeader.svelte";
   import screenshot from "../assets/landing_screenshot.png";
 </script>
 
+<LandingHeader />
 <div class="container">
   <h1>PLAYFAIR</h1>
   <h2>A humane notebook interface.</h2>
@@ -10,7 +12,7 @@
     <div class="column">Complete reports with <span>zero context-switching</span></div>
     <div class="end-column">Fully <span>replace paper</span> for casual mathematical work</div>
   </div>
-  <button>LOG IN</button>
+  <a class="login" href="/login">LOG IN</a>
   <div class="screenshot">
     <img src={screenshot} alt="Preview" />
   </div>
@@ -32,6 +34,7 @@
     -webkit-user-select: none;
     -ms-user-select: none;
   }
+
   h2 {
     font-size: 2.1em;
     margin: 0;
@@ -46,30 +49,6 @@
 
   span{
     font-weight: 300;
-  }
-
-  button{
-    background-color: black;
-    color: #fff;
-    font-family: Jost;
-    border: none;
-    padding: 10px 20px;
-    font-size: 1.2em;
-    font-weight: 300;
-    cursor: pointer;
-
-    user-select: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-
-    transition: 0.2s;
-  }
-
-  button:hover{
-    background-color: white;
-    color: black;
-    outline: black 2px solid;
   }
 
   footer {
@@ -93,7 +72,8 @@
     align-items: center;
     height: 100vh;
 
-    padding-top: 25px;
+    padding: 25px;
+    padding-bottom: 0;
   }
 
   .column, .end-column {
@@ -117,6 +97,31 @@
     justify-content: center;
     margin: 50px;
     max-width: 800px;
+  }
+
+  .login{
+    background-color: black;
+    color: #fff;
+    font-family: Jost;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    font-weight: 300;
+    cursor: pointer;
+    text-decoration: none;
+
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+
+    transition: 0.2s;
+  }
+
+  .login:hover{
+    background-color: white;
+    color: black;
+    outline: black 2px solid;
   }
 
   .screenshot{
