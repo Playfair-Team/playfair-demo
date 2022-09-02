@@ -4,8 +4,10 @@
 
 <header>
   <div class="playfair-logo">
-    <img src={playfair_logo} alt="Playfair" />
-    <h1>Playfair</h1>
+    <a href="/">
+      <img src={playfair_logo} alt="Playfair" />
+      <h1>Playfair</h1>
+    </a>
   </div>
   <div class="user">
     <!-- #TODO: -->
@@ -32,6 +34,9 @@
   }
 
   img {
+    width: 50px;
+    height: 50px;
+
     -webkit-user-drag: none;
     user-select: none;
     -moz-user-select: none;
@@ -39,14 +44,15 @@
     -ms-user-select: none;
   }
 
-  .playfair-logo{
+  a{
     display: flex;
     align-items: center;
-    flex-grow: 1;
+    text-decoration: none;
+    color: #000;
+    max-width: fit-content;
   }
 
-  .playfair-logo > img {
-    width: 50px;
-    height: 50px;
+  .playfair-logo{
+    flex-grow: 1;
   }
 </style>

@@ -41,7 +41,7 @@
 <div class="container">
   <div class="content">
     <div class="dash-header-content">
-      <h1>MY NOTEBOOKS</h1>
+      <h1>My Notebooks</h1>
       <button class="create-new" ><span>+</span> CREATE NEW</button>
     </div>
     <hr class="solid">
