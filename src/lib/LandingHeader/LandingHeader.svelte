@@ -10,10 +10,10 @@
     <h1>Playfair</h1>
   </div>
   <div class="socials">
-    <a href="https://twitter.com/join_playfair">
+    <a href="https://twitter.com/withplayfair" target="_blank" rel="noopener noreferrer">
       <img src={twitter_logo} alt="Twitter" />
     </a>
-    <a href="https://github.com/Playfair-Team">
+    <a href="https://github.com/Playfair-Team" target="_blank" rel="noopener noreferrer">
       <img src={github_logo} alt="Github" />
     </a>
   </div>
