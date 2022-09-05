@@ -1,28 +1,65 @@
 <script lang="ts">
-  import { sendMagicLink } from '$lib/firebase/client';
+  import { onMount } from 'svelte';
   import { fade } from 'svelte/transition';
+  import { isMagicLink, signInWithMagicLink } from '$lib/firebase/client';
+  import { clearMagicEmail, getMagicEmail } from '$lib/localStorage/magicEmail';
+  import { goto } from '$app/navigation';
+  import { setUser } from '$lib/stores/user';
 
-  type FormState = 'idle' | 'loading' | 'success' | Error;
+  type FormState = 'validating' | 'idle' | 'loading' | Error;
   let state: FormState = 'idle';
 
-  const handleSubmit: svelte.JSX.EventHandler<SubmitEvent, HTMLFormElement> = async ({ currentTarget }) => {
+  const login = async (magicEmail: string) => {
     state = 'loading';
-    const email = new FormData(currentTarget).get('email') as string;
-
-    const redirectUrl = `${window.location.origin}/auth/confirm`;
+    const email = magicEmail;
 
     try{
-      await sendMagicLink(email, redirectUrl);
-      state = 'success';
-    } catch(error) {
-      state = error;
+      const credential = await signInWithMagicLink(email, window.location.href);
+      const token = await credential.user.getIdToken();
+
+      const user = await fetch('/auth/session', {
+        method: 'POST',
+        headers: new Headers({Authorization: `Bearer ${token}`}),
+      }).then(response => response.json())
+
+      clearMagicEmail()
+
+      setUser(user)
+
+      goto('/dashboard')
+    }catch{
+      clearMagicEmail()
+
+      state = new Error("Something went wrong. Please try again.")
     }
-    
   }
+
+  const handleSubmit: svelte.JSX.EventHandler<SubmitEvent, HTMLFormElement> = async ({ currentTarget }) => {
+    const formInputEmail = new FormData(currentTarget).get('email') as string;
+
+    login(formInputEmail)
+  }
+
+  onMount(() => {
+    if(!isMagicLink(window.location.href)){
+      state = new Error("Invalid magic link");
+      return
+    }
+
+    const magicEmail = getMagicEmail();
+
+    if(!magicEmail){
+      state = 'idle'
+      return
+    }
+
+    login(magicEmail)
+  })
+  
 </script>
 
 <div class="container" in:fade="{{ duration: 1000, delay: 200 }}">
-  <h1>Log In</h1>
+  <h1>Confirm Log In</h1>
   {#if state == 'idle'}
     <form on:submit|preventDefault={handleSubmit}>
       <input 
@@ -36,6 +73,8 @@
     </form>
   {:else if state == 'loading'}
     <p>Loading...</p>
+  {:else if state == 'validating'}
+    <p>Validating magic link...</p>
   {:else if state instanceof Error}
     <p>Error: {state.message}</p>
   {:else}

@@ -1,31 +1,30 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
+  import { sendMagicLink } from '$lib/firebase/client';
+  import { setMagicEmail } from '$lib/localStorage/magicEmail';
   import { fade } from 'svelte/transition';
-  import { isMagicLink, signInWithMagicLink } from '$lib/firebase/client';
 
-  type FormState = 'validating' | 'idle' | 'loading' | Error;
+  type FormState = 'idle' | 'loading' | 'success' | Error;
   let state: FormState = 'idle';
 
   const handleSubmit: svelte.JSX.EventHandler<SubmitEvent, HTMLFormElement> = async ({ currentTarget }) => {
     state = 'loading';
     const email = new FormData(currentTarget).get('email') as string;
 
-    signInWithMagicLink(email, window.location.href);
-  }
+    const redirectUrl = `${window.location.origin}/auth/confirm`;
 
-  onMount(() => {
-    if(!isMagicLink(window.location.href)){
-      state = new Error("Invalid magic link");
-      return
+    try{
+      await sendMagicLink(email, redirectUrl);
+      setMagicEmail(email);
+      state = 'success';
+    } catch(error) {
+      state = error;
     }
-
-    state = 'idle'
-  })
-  
+    
+  }
 </script>
 
 <div class="container" in:fade="{{ duration: 1000, delay: 200 }}">
-  <h1>Confirm Log In</h1>
+  <h1>Log In</h1>
   {#if state == 'idle'}
     <form on:submit|preventDefault={handleSubmit}>
       <input 
@@ -39,8 +38,6 @@
     </form>
   {:else if state == 'loading'}
     <p>Loading...</p>
-  {:else if state == 'validating'}
-    <p>Validating magic link...</p>
   {:else if state instanceof Error}
     <p>Error: {state.message}</p>
   {:else}

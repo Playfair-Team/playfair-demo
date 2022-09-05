@@ -6,31 +6,31 @@
   $notebookStore = [
     { 
       id:'ba502cb7-3fc3-445a-b125-88d9341902e5', 
-      title: "Notebook 1", 
+      title: "Placeholder Notebook 1", 
       date_updated: "09/24/2020", 
       date_created: "06/13/2019"
     },
     { 
       id:'ba502cb7-3fc3-445a-b125-88d9341902e5', 
-      title: "Notebook 2", 
+      title: "Placeholder Notebook 2", 
       date_updated: "09/24/2020", 
       date_created: "06/13/2019"
     },
     { 
       id:'ba502cb7-3fc3-445a-b125-88d9341902e5', 
-      title: "Notebook 3", 
+      title: "Placeholder Notebook 3", 
       date_updated: "09/24/2020", 
       date_created: "06/13/2019"
     },
     { 
       id:'ba502cb7-3fc3-445a-b125-88d9341902e5', 
-      title: "Notebook 4", 
+      title: "Placeholder Notebook 4", 
       date_updated: "09/24/2020", 
       date_created: "06/13/2019"
     },
     { 
       id:'ba502cb7-3fc3-445a-b125-88d9341902e5', 
-      title: "Notebook 5", 
+      title: "Placeholder Notebook 5", 
       date_updated: "09/24/2020", 
       date_created: "06/13/2019"
     },
