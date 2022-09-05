@@ -6,13 +6,13 @@
 <LandingHeader />
 <div class="container">
   <h1>PLAYFAIR</h1>
-  <h2>A humane notebook interface.</h2>
+  <h2>A humane notebook interface. Coming soon.</h2>
   <div class="row">
     <div class="column">Model mathematical systems while writing <span>no code</span></div>
     <div class="column">Complete reports with <span>zero context-switching</span></div>
     <div class="end-column">Fully <span>replace paper</span> for casual mathematical work</div>
   </div>
-  <a class="login" href="/login">LOG IN</a>
+  <a class="demo" href="/demo">TRY DEMO</a>
   <div class="screenshot">
     <img src={screenshot} alt="Preview" />
   </div>
@@ -99,7 +99,7 @@
     max-width: 800px;
   }
 
-  .login{
+  .demo{
     background-color: black;
     color: #fff;
     font-family: Jost;
@@ -118,7 +118,7 @@
     transition: 0.2s;
   }
 
-  .login:hover{
+  .demo:hover{
     background-color: white;
     color: black;
     outline: black 2px solid;
