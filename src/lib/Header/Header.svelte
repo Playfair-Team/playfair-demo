@@ -9,7 +9,7 @@
   <div class="playfair-logo">
     <a href="/">
       <img src={playfair_logo} alt="Playfair" />
-      <h1>Playfair</h1>
+      <h1>Playfair Demo</h1>
     </a>
   </div>
   <div class="user">

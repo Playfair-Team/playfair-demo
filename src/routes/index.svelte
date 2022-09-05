@@ -40,6 +40,7 @@
     margin: 0;
     font-weight: 200;
     color: rgb(84, 84, 84);
+    text-align: center;
 
     user-select: none;
     -moz-user-select: none;
@@ -144,7 +145,7 @@
       font-size: 4.2em;
     }
     h2{
-      font-size: 1.7em;
+      font-size: 1.4em;
     }
     .column, .end-column {
       font-size: 1.1em;
