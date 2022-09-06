@@ -1,8 +1,5 @@
 <script>
-  import { user } from '$lib/stores/user';
   import playfair_logo from "./playfair_logo.svg";
-
-  console.log($user)
 </script>
 
 <header>
@@ -13,9 +10,7 @@
     </a>
   </div>
   <div class="user">
-    {#if $user}
-      <a href="/profile">{$user.email}</a>
-    {/if}
+  
   </div>
 </header>
 
@@ -64,10 +59,5 @@
   .user{
     display: flex;
     align-items: center;
-  }
-
-  .user a{
-    padding-left: 10px; padding-right: 10px;
-    min-width: fit-content;
   }
 </style>
