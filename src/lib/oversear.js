@@ -9,22 +9,6 @@ class Oversear {
 		this.variablesToEquations = {};
 		this.solvedVariables = {};
 		this.ce = new ComputeEngine();
-		// TODO: use this to add units
-		// {
-		//     latexDictionary: [
-		//     {
-		//         trigger: ['\\smoll'],
-		//         requiredLatexArg: 2,
-		//         parse: (parser) => {
-		//         return [
-		//             'Divide',
-		//             parser.matchRequiredLatexArgument() ?? 'Missing',
-		//             parser.matchRequiredLatexArgument() ?? 'Missing',
-		//         ];
-		//         },
-		//     },
-		//     ],
-		// }
 		this.ce.jsonSerializationOptions = {
 			exclude: [],
 			shorthands: []
@@ -70,7 +54,6 @@ class Oversear {
 
 	removeEquation(uuid, equation) {
 		delete this.equations[uuid];
-		//todo: need to remove from equationsToVariables
 	}
 
 	mfExpr(mf) {

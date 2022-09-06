@@ -1,8 +1,6 @@
 <script>
   import { variableStore } from '$lib/stores.js';
 
-  // TODO: Hide sidepanel
-
 </script>
 
 <div class="side-panel">

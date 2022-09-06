@@ -37,14 +37,6 @@
       theme: "snow"
     });
   });
-
-  // TODO: Hide toolbar when quill not focused
-
-  // TODO: Use Jost 300 as default font
-
-  // TODO: Implement image resizing, drag & drop
-
-  // TODO: Implement Latex support
  
 </script>
 
