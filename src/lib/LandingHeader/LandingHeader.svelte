@@ -1,6 +1,7 @@
 <script>
   import github_logo from "./github_logo.png";
   import twitter_logo from "./twitter_logo.png";
+  import discord_logo from "./discord_logo.png";
   import playfair_logo from "./playfair_logo.svg";
 </script>
 
@@ -10,6 +11,9 @@
     <h1>Playfair</h1>
   </div>
   <div class="socials">
+    <a href="https://discord.gg/udECAkpgn9" target="_blank" rel="noopener noreferrer">
+      <img src={discord_logo} alt="Discord" />
+    </a>
     <a href="https://twitter.com/withplayfair" target="_blank" rel="noopener noreferrer">
       <img src={twitter_logo} alt="Twitter" />
     </a>
@@ -62,7 +66,7 @@
     align-items: center;
     justify-content: center;
   }
-
+  
   .socials > * > img{
     width: 30px;
     height: 30px;

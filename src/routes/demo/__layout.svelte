@@ -11,5 +11,7 @@
 	main{
     display: flex;
 		height: 100%;
+		padding: 25px;
+		padding-top: 10px;
 	}
 </style>
